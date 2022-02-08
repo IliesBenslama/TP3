@@ -19,26 +19,20 @@
 #define carre(x) x * x
 
 int main() {
-	setlocale(LC_ALL, "fr-FR");
-
-	//Déclarer une variable « nb » entière et égale à 5 et afficher la valeur de carre(Nb). 
-	int nb = 5;
-	
-	
-	//Afficher en suite le carre(nb + 1), quel est le résultat obtenu ? 
-	
-
-	//D’où vient le problème à votre avis ? 
-	//Proposer une modification de la macro pour qu’elle fonctionne.
-
-#ifdef carre
+	[16:29] Lamia DEMNATI
+setlocale(LC_ALL, "fr-FR"); //DÃ©clarer une variable Â« nb Â» entiÃ¨re et Ã©gale Ã  5 et afficher la valeur de carre(Nb).
+int nb = 5;
+printf("\n",carre(nb));
+//Afficher en suite le carre(nb + 1), quel est le rÃ©sultat obtenu ?
+printf("\n", carre(nb + 1)); //Dâ€™oÃ¹ vient le problÃ¨me Ã  votre avis ?
+// de la facon dont carre(x) est definie
+//Proposer une modification de la macro pour quâ€™elle fonctionne.#ifdef carre
 #undef carre
-#define carre(x)	//compléter ici
-#endif
-
-	printf_s("\nla valeur du carré de %d est égale à %d", nb+1, carre(nb + 1));
-
+#define carre(x) ((x)*(x)) //complÃ©ter ici
+#endif 
+	printf_s("\nla valeur du carrÃ© de %d est Ã©gale Ã  %d", nb+1, carre(nb + 1)); 
+	
 	printf("\n");
-
 	return(EXIT_SUCCESS);
 }
+
