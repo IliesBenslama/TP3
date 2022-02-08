@@ -14,15 +14,33 @@
 /******************************************/
 
 
-int main() {
-	setlocale(LC_ALL, "fr-FR");
+nt main() {
+setlocale(LC_ALL, "fr-FR");
 
-	unsigned int val = 0xAAFF0000;
+unsigned int val =0xAAFF0000;
+//a
+int taille_octet= sizeof(val);
+printf("\n %u ", taille_octet);
+//b
+int taille_bit = taille_octet * 8;
+printf("\n %u \n", taille_bit);
+//c et d
+int i;
+for (i = 0; i < taille_bit; i++)
+{
+int a= ((val >> i) & 1);
+if (a == 0)
+{
+printf("\nbit %d: OFF", i);
+}
+if (a == 1)
+{
+printf("\nbit %d: ON", i);
+}
+}
 
-	
 
 
-
-	printf("\nBye !\n");
-	return(EXIT_SUCCESS);
+printf("\nBye !\n");
+return(EXIT_SUCCESS);
 }
